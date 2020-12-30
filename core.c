@@ -40,20 +40,45 @@ t_key		*get_env(char **env)
 	return (cur_env);
 }
 
+void		term_prefix(t_key *env)
+{
+	char	buff[MAX_PATH];
+	char	*cur_wd;
+	char	*tmp;
 
+	cur_wd = getcwd(buff, MAX_PATH);
+	tmp = NULL;
+	if (cur_wd == NULL)
+		tmp = ft_strdup(ft_strrchr(search_env(env, "PWD"), '/') + 1);
+	else
+	{
+		if (!ft_strcmp(cur_wd, "/"))
+			tmp = ft_strdup(cur_wd);
+		else
+			tmp = ft_strdup(ft_strrchr(cur_wd, '/') + 1);
+	}
+	ft_putstr("\033[1;31m★ \033[1;33m");
+	ft_putstr(tmp);
+	ft_putstr(" >> \033[0m");
+	ft_strdel(&tmp);
+}
 
 int			main(int argc, char **argv, char **env)
 {
-	// char	*input;
+	char	*input;
 	t_key	*env_head;
 
-	// input = NULL;
+	input = NULL;
 	env_head = NULL;
 	(void)argc;
 	(void)argv;
-
 	env_head = get_env(env);
-	print_key(env_head);
+	while(1)
+	{
+		term_prefix(env_head);
+		get_next_line(0, &input);
+		env_head = exec_cmd(input, env_head);
+	}
 
 	return (0);
 }

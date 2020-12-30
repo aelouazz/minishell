@@ -1,6 +1,6 @@
 NAME = minishell
 CFLAGS = -Wall -Werror -Wextra
-SOURCE = dev.c core.c
+SOURCE = dev.c core.c env.c
 
 OBJ = $(SOURCE:.c=.o)
 
