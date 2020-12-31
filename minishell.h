@@ -22,6 +22,7 @@ typedef	struct		s_key
 }					t_key;
 
 char		*search_env(t_key *env, char *to_search);
+t_key			*exec_cmd(char *input, t_key *env);
 
 // TODO remove dev Tools: ////////
 void		print_key(t_key *env);

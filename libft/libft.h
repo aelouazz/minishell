@@ -163,6 +163,8 @@ t_vec3				vecprod(t_vec3 *a, t_vec3 *b);
 t_vec3				vecopx(t_vec3 *a, double x);
 double				vecdistance(t_vec3 *a, t_vec3 *b);
 char				**ft_strsplitset(char *str, const char *charset);
+char				**ft_strsplitstr(char *input, char *token);
 void				sort_by_name(t_list **head, int count);
+void				free_2d(char ***str);
 
 #endif

@@ -29,7 +29,7 @@ SOURCE = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		 ft_lstclear.c ft_lstnclear.c get_next_line.c ft_strconc.c \
 		 ft_clamp.c ft_mix.c ft_smoothstep.c ft_vec.c ft_vec2.c ft_vec3.c\
 		 ft_putmem.c ft_recursive_factorial.c ft_strsplitset.c ft_isbtw.c\
-		 ft_sort.c
+		 ft_sort.c ft_strsplitstr.c ft_free_2d.c
 
 OBJ = $(SOURCE:.c=.o)
 
