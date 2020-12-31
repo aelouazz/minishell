@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	free_2d(char ***str)
+int	free_2d(char ***str)
 {
 	int	i;
 
@@ -21,4 +21,5 @@ void	free_2d(char ***str)
 		free((*str)[i]);
 	free((*str));
 	(*str) = NULL;
+	return (1);
 }

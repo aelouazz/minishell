@@ -21,8 +21,13 @@ typedef	struct		s_key
 	struct s_key	*next;
 }					t_key;
 
-char		*search_env(t_key *env, char *to_search);
-t_key			*exec_cmd(char *input, t_key *env);
+char				*search_env(t_key *env, char *to_search);
+t_key				*exec_cmd(char *input, t_key *env);
+int					check_builtins(char *cmd);
+int					check_file(char *path);
+char				**list_env(t_key *env);
+void				do_builtins(char ***final, t_key **env, char **input);
+
 
 // TODO remove dev Tools: ////////
 void		print_key(t_key *env);
