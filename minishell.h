@@ -32,6 +32,7 @@ void				ft_unsetenv(t_key ***env, char **final);
 void				ft_print_env(t_key *env);
 void				ft_echo(char **str);
 void				ft_cd(char **tab, t_key ***env);
+void				ft_exit(char ***final, t_key **env, char **input);
 
 // TODO remove dev Tools: ////////
 void		print_key(t_key *env);

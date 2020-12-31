@@ -11,7 +11,7 @@ void		split_env(t_key **new, char **env, int i)
 		(*new)->key = ft_strdup(tmp[0]);
 	if (tmp[1])
 		(*new)->value = ft_strdup(tmp[1]);
-	// TODO free tmp
+	free_2d(&tmp);
 }
 
 t_key		*get_env(char **env)
