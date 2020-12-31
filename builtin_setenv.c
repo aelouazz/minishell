@@ -37,6 +37,49 @@ void		env_list_replace(t_key ****env, char *key, char *value)
 	}
 }
 
+
+void	env_list_del(t_key ****env, char *key)
+{
+	t_key	*fresh;
+	t_key	*prev;
+
+	fresh = ***env;
+	if (fresh != NULL && !ft_strcmp(fresh->key, key))
+	{
+		free(fresh->key);
+		free(fresh->value);
+		***env = fresh->next;
+		free(fresh);
+		return ;
+	}
+	while (fresh != NULL && ft_strcmp(fresh->key, key))
+	{
+		prev = fresh;
+		fresh = fresh->next;
+	}
+	if (fresh == NULL)
+		return ;
+	prev->next = fresh->next;
+	free(fresh->key);
+	free(fresh->value);
+	free(fresh);
+}
+
+void	ft_unsetenv(t_key ***env, char **final)
+{
+	int	i;
+
+	i = 1;
+	while (final[i])
+		i++;
+	if ((i - 1) != 1)
+	{
+		ft_putendl("Too few, many arguments.");
+		return ;
+	}
+	env_list_del(&env, final[1]);
+}
+
 void		ft_setenv(t_key ***env, char **final)
 {
 	int		i;
