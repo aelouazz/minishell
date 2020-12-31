@@ -27,7 +27,10 @@ int					check_builtins(char *cmd);
 int					check_file(char *path);
 char				**list_env(t_key *env);
 void				do_builtins(char ***final, t_key **env, char **input);
-
+void				ft_setenv(t_key ***env, char **final);
+void				ft_unsetenv(t_key ***env, char **final);
+void				ft_print_env(t_key *env);
+void				ft_echo(char **str);
 
 // TODO remove dev Tools: ////////
 void		print_key(t_key *env);
