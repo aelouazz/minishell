@@ -1,9 +1,5 @@
 # Minishell:
 
-### SUBJECT:
-
-[minishell.en.pdf](https://github.com/aelouazz/minishell/blob/master/zz_minishell.en.pdf)
-
 ## Introduction:
 
 > **The objective of this project is to create the simplest start of a shell
